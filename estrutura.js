@@ -1,4 +1,5 @@
 const boolean = true
+
 const string = "Felipe"
 const number = 10
 const float = 10.1
