@@ -1,47 +1,56 @@
 import './App.css';
 
 function App() {
-  // MAP SEMPRE EM USADO PARA TRAZER DADOS DE UM ARRAY []
-  const celulas = [
+const lista = [
     {
-      lider: "Fulano",
-      numero_celula: 10,
-      mais_de_10: true,
-      membros: ["abreu"]
+      name: "Felipe",
+      email: "teste@teste.com.br",
+      eLegal: true,
+      estadoCivil: "Casado"
     },
     {
-      lider: "Fulano 2",
-      numero_celula: 11,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
+      name: "Felipe 2",
+      email: "teste@teste.com.br",
+      eLegal: false,
+      estadoCivil: "Casado"
     },
     {
-      lider: "Fulano 3",
-      numero_celula: 12,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
+      name: "Felipe 3",
+      email: "teste@teste.com.br",
+      eLegal: null,
+      estadoCivil: "Casado"
+    },
+    {
+      name: "Felipe 4",
+      email: "fpr@teste.com.br",
+      eLegal: true,
+      estadoCivil: "Casado"
     }
   ]
 
-  // fazer uma lista exibindo 5 pessoas com nome, idade, data de nascimento e nome da mae, e para 3 pessoa 
-  // o nome do pai porem quem não tiver o pai nem o titulo pai
+  const filtrando = lista.filter(itemLista =>{
+    return itemLista.email === 'fpr@teste.com.br' 
+  })
+  
 
 
+
+  // Listagem com 4 objetos cada objeto contendo 3 itens diversos, e item boolean
+  // só dois sejam true dois vao ser false e exiba os itens que tem esse "false"
+
+  // outra lista que tenha 3 objetos com 3 string e só vão dois item que a string 
+  // seja abacaxi 
+
+  console.log(filtrando, 'filtrando')
   return (
     <div className="App">
-      {
-        celulas.map(item => {
-
-          return (
-            <div className='box'>
-              <div>{item.lider}</div>
-              <div>{item.numero_celula}</div>
-              {item.mais_de_10 && <span>Lider Bom</span> }
-         
-            </div>
-          )
-        })
-      }
+    {
+      filtrando.map(itemLista=>{
+        return(
+          <p>{itemLista.name}</p>
+        )
+      })
+    }
     </div>
   );
 }
