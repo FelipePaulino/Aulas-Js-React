@@ -1,48 +1,25 @@
 import './App.css';
 
 function App() {
-  // MAP SEMPRE EM USADO PARA TRAZER DADOS DE UM ARRAY []
-  const celulas = [
-    {
-      lider: "Fulano",
-      numero_celula: 10,
-      mais_de_10: true,
-      membros: ["abreu"]
-    },
-    {
-      lider: "Fulano 2",
-      numero_celula: 11,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
-    },
-    {
-      lider: "Fulano 3",
-      numero_celula: 12,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
-    }
-  ]
+  // onClick no click
+  // onChange na mudança
 
-  // fazer uma lista exibindo 5 pessoas com nome, idade, data de nascimento e nome da mae, e para 3 pessoa 
-  // o nome do pai porem quem não tiver o pai nem o titulo pai
+  // fazer um input com onChange que o a pessoa digitar ele vai somar com uma varivael
+  // com o valor 4 e vai retornar o alert com o resultado
 
 
+//fazer um click numa div com texto qualquer que retorne um alert o texto "Você conseguiu" 
+// de uma variavel
   return (
     <div className="App">
-      {
-        celulas.map(item => {
-
-          return (
-            <div className='box'>
-              <div>{item.lider}</div>
-              <div>{item.numero_celula}</div>
-              {item.mais_de_10 && <span>Lider Bom</span> }
-         
-            </div>
-          )
-        })
-      }
+      <form>
+        <label>Nome:</label>
+        <input onChange={(e) => { console.log(e.target.value) }} />
+        <button onClick={() => { alert('você enviou a requisição') }}>Enviar</button>
+      </form>
+      <p onClick={() => { alert('você enviou a requisição') }} >texto teste de click</p>
     </div>
+  
   );
 }
 
