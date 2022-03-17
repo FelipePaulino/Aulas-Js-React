@@ -25,10 +25,11 @@ function App() {
 
   // fazer uma lista exibindo 5 pessoas com nome, idade, data de nascimento e nome da mae, e para 3 pessoa 
   // o nome do pai porem quem não tiver o pai nem o titulo pai
-
+let ativo = true
 
   return (
     <div className="App">
+
       {
         celulas.map(item => {
 
