@@ -10,8 +10,8 @@ function App() {
       membros: ["abreu"]
     },
     {
-      lider: "Fulano 2",
-      numero_celula: 11,
+      lider: "Fulano",
+      numero_celula: 10,
       mais_de_10: false,
       membros: ["joao", "maria", "zezinho"]
     },
@@ -23,18 +23,16 @@ function App() {
     }
   ]
 
-  // fazer uma lista exibindo 5 pessoas com nome, idade, data de nascimento e nome da mae, e para 3 pessoa 
-  // o nome do pai porem quem não tiver o pai nem o titulo pai
 let ativo = true
 
   return (
     <div className="App">
 
       {
-        celulas.map(item => {
+        celulas.map((item, index) => {
 
           return (
-            <div className='box'>
+            <div key={index} className='box'>
               <div>{item.lider}</div>
               <div>{item.numero_celula}</div>
               {item.mais_de_10 && <span>Lider Bom</span> }
