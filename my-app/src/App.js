@@ -5,39 +5,68 @@ function App() {
   const celulas = [
     {
       lider: "Fulano",
-      numero_celula: 10,
-      mais_de_10: true,
-      membros: ["abreu"]
+      lider2: "Fulano",
+      lider3: "Fulano",
+      membros: [
+        {
+          esporte: "Futebol",
+          t: "bla"
+        },
+        {
+          esporte: "Basquete",
+          t: "bla"
+        }
+      ]
     },
     {
       lider: "Fulano",
-      numero_celula: 10,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
+      lider2: "Fulano",
+      lider3: "Fulano",
+      membros: [
+        {
+          esporte: "Futebol",
+          t: "bla"
+        },
+        {
+          esporte: "Basquete",
+          t: "bla"
+        }
+      ]
     },
-    {
-      lider: "Fulano 3",
-      numero_celula: 12,
-      mais_de_10: false,
-      membros: ["joao", "maria", "zezinho"]
-    }
   ]
 
-let ativo = true
+  let ativo = true
 
   return (
     <div className="App">
-
       {
-        celulas.map((item, index) => {
-
+        celulas.map(celula => {
+          const j = celula.membros.filter(y =>{
+            return y.esporte !== "Futebol"
+          })
+          console.log(j, 'j')
           return (
-            <div key={index} className='box'>
-              <div>{item.lider}</div>
-              <div>{item.numero_celula}</div>
-              {item.mais_de_10 && <span>Lider Bom</span> }
-         
+            <div>
+              PRIMEIRAS STRINGS
+              <div>{celula.lider}</div>
+              <div>{celula.lider2}</div>
+              <div>{celula.lider3}</div>
+              {
+                j.map(k=>{
+                  return(
+                    <div>
+                           <br></br>
+                     <div> STRINGS DA LISTA</div>
+                   { k.esporte}<br></br>
+                   {k.t}
+                    </div>
+                  )
+
+                })
+              }
+              <br></br>
             </div>
+            
           )
         })
       }
