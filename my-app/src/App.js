@@ -1,24 +1,18 @@
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Secao from './components/Secao';
+import { Teste, Click } from './utils'
 
 function App() {
 
-  const mostrar = false
-  const textoHeader = 'esse é o titulo do header'
+  // criar uma função externa que chame o numero digitado no input no console log acrescentando
+  // a mensagem --é muito louco--
 
-  // vai fazer 4 cards que usem o mesmo compponente porem mostre textos diferentes
-  // mostrar 2 links que consomem o mesmo componente que vai ser passado um boleano por props, se
-  // eu passar true exibe o link, se eu passar false ou não passar nada, não exibe o link
+  //passar duas variaveis para um segunda função aonde elas retornem dentro de um alert depois do click
   return (
-    <div className="App">
-      <Header textoHeader={textoHeader} />
-      <Secao texto={'esse é o texto da seção 1'} />
-      <Secao texto={'esse é o texto da seção 2'}/>
-      <Footer />
-    </div>
-  );
+    <form>
+      <input onChange={(e) => { Teste(e.target.value) }} />
+      <button onClick={(e) => { Click('Felipe') }}>Enviar</button>
+    </form>
+  )
 }
 
 export default App;
